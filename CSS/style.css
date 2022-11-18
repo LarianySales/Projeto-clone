@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #ddd;
+}
+header, section{
+    padding: 5rem;
+}
+
+header{
+    background-color: #2196f3;
+}
+main{
+    /* define a largura máxima dos elementos em tela */
+    /* max-width: 1200px; */
+    /* centralizando conteúdo */
+    margin: auto;
+    /* habilitando o gride */
+    display: grid;
+    /* espaço entre cada grid */
+    grid-row-gap: 1rem;
+    /* habilita as areas que se râo posicionadas */
+    grid-template-areas: 
+    'video-player  video-player'
+    'video-info    video-info'
+    'actions       actions'
+    'channel       subscribe'
+    'up-next       up-next';
+}
+
+.video-player{
+    background-color: #89f;
+    grid-area: video-player;
+}
+.video-info{
+    background-color: mediumslateblue;
+    grid-area: video-info;
+}
+.actions{
+    background-color: mediumpurple;
+    grid-area: actions;
+}
+.channel{
+    background-color: plum;
+    grid-area: channel;
+}
+.subscribe{
+    background-color: slateblue;
+    grid-area: subscribe;
+}
+.ad{
+  background-color: #ff7;
+  grid-area: ad;
+  /* esconder anúncio */
+  /* display: none; */
+}
+.up-next{
+    background-color: #3398;
+    grid-area: up-next;
+}
+/* aplicando responsividade */
+
+/* aplicando o conceito do mobile first */
+    
+
+@media screen and (min-width:700px){
+        header{
+            grid-template-columns: auto auto auto;
+
+        }
+       main{
+            max-width: 1200px;
+            grid-template-areas: 
+
+        'video-player video-player   ad'
+        'video-player video-player   up-next'
+        'video-info   actions        up-next'
+        'channel      subscribe      up-next';  
+        }
+
+    }
